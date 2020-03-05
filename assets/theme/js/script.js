@@ -71,7 +71,7 @@
 
         (function($, sr) {
             // debouncing function from John Hann
-            // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+            // https://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
             var debounce = function(func, threshold, execAsap) {
                 var timeout;
 
@@ -337,7 +337,7 @@
             function videoParser(card) {
                 $(card).outerFind('[data-bg-video]').each(function() {
                     var videoURL = $(this).attr('data-bg-video');
-                    var parsedUrl = videoURL.match(/(http:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
+                    var parsedUrl = videoURL.match(/(https:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
 
                     var $img = $('<div class="mbr-background-video-preview">')
                         .hide()
@@ -762,7 +762,7 @@
                     var videoURL = $(this).attr('data-src');
                     $(this).removeAttr('data-src');
 
-                    var parsedUrl = videoURL.match(/(http:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
+                    var parsedUrl = videoURL.match(/(https:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
                     if (videoURL.indexOf('youtu') !== -1) {
                         $(this).attr('src', 'https://youtube.com/embed/' + parsedUrl[6] + '?rel=0&enablejsapi=1');
                     } else if (videoURL.indexOf('vimeo') !== -1) {
